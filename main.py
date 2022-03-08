@@ -76,7 +76,7 @@ async def videos_handler(bot: Client, m: Message):
     if media.file_name is None:
         await m.reply_text("File Name Not Found!")
         return
-    if media.file_name.rsplit(".", 1)[-1].lower() not in ["mp4", "mkv", "webm"]:
+    if media.file_name.rsplit(".", 1)[-1].lower() not in ["mp4", "mkv", "webm", "m4v"]:
         await m.reply_text("This Video Format not Allowed!\nOnly send MP4 or MKV or WEBM.", quote=True)
         return
     if QueueDB.get(m.from_user.id, None) is None:
